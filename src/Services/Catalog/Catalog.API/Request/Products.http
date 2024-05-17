@@ -1,0 +1,16 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@host = https://localhost:5050
+POST {{host}}/products
+Content-Type: application/json
+
+
+{
+    "Name":"Carter module",
+    "Category":["api"],
+    "Description":"api development",
+    "ImageFile":"",
+    "Price":100
+}
+
+###
