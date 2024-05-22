@@ -9,12 +9,12 @@ Content-Type: application/json
     "Name":"Carter module",
     "Category":["api"],
     "Description":"api development",
-    "ImageFile":"",
+    "ImageFile":"as",
     "Price":100
 }
 
 ###
-GET {{host}}/products
+GET {{host}}/products?pagenumber=2&pageSize=5
 
 ###
 
@@ -41,3 +41,7 @@ Content-Type: application/json
 ###
 
 DELETE {{host}}/products/{018f9036-5e24-48ec-93e4-25207e8e7302}
+
+### 
+//Health check
+GET {{host}}/health

@@ -14,11 +14,10 @@
         }
     }
 
-    public class CreateProductHandler(IDocumentSession documentSession,ILogger<CreateProductHandler> logger) : ICommandHandler<CreateProductCommand, ErrorOr<CreateProductResult>>
+    public class CreateProductHandler(IDocumentSession documentSession) : ICommandHandler<CreateProductCommand, ErrorOr<CreateProductResult>>
     {
         public async Task<ErrorOr<CreateProductResult>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            logger.LogInformation("CreateProductHandler.Handle called with {@Command}", request);
             var product = new Product
             {
                 Id = request.Id,
