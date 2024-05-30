@@ -1,8 +1,8 @@
 ﻿global using Carter;
 global using Mapster;
 global using MediatR;
-global using BuildingBlock.CQRS;
-global using BuildingBlock.Errors;
+global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Errors;
 global using Catalog.API.Models;
 global using ErrorOr;
 global using Marten;

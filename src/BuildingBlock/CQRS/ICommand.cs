@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildingBlock.CQRS
+namespace BuildingBlocks.CQRS
 {
     public interface ICommand : ICommand<Unit>
     {

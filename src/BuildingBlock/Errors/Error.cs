@@ -1,6 +1,6 @@
 ﻿using ErrorOr;
 
-namespace BuildingBlock.Errors
+namespace BuildingBlocks.Errors
 {
     public class ApplicationError
     {

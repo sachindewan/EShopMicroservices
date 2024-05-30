@@ -1,5 +1,5 @@
-using BuildingBlock.Behaviors;
-using BuildingBlock.Exceptions.Handlers;
+using BuildingBlocks.Behaviors;
+using BuildingBlocks.Exceptions.Handlers;
 using Catalog.API.Data;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;

@@ -45,3 +45,33 @@ DELETE {{host}}/products/{018f9036-5e24-48ec-93e4-25207e8e7302}
 ### 
 //Health check
 GET {{host}}/health
+
+###
+
+@host1 = https://localhost:6061
+POST {{host1}}/basket
+Content-Type: application/json
+
+{
+    "cart":{
+      "UserName":"sachinkumar@gmail.com",
+      "items":[{
+        "ProductId":"018f9036-5e24-48ec-93e4-25207e8e7302",
+        "ProductName":"IPhone X",
+        "Price":100,
+        "Quantity":1,
+        "color":"red"
+    },
+      {
+        "ProductId":"018f9036-5e24-48ec-93e4-25207e8e7303",
+        "ProductName":"IPhone X",
+        "Price":1000,
+        "Quantity":2,
+        "color":"green"
+      }
+    ]
+    }
+}
+
+###
+GET {{host1}}/basket/sachinkumar@gmail.com
