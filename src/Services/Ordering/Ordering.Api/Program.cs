@@ -20,6 +20,5 @@ if(app.Environment.IsDevelopment())
 {
     await app.InitialiseDatabaseAsync();
 }
-app.MapGet("/", () => "Hello World!");
 
 app.Run();

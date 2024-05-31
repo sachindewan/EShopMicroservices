@@ -1,0 +1,54 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@Host = https://localhost:5053
+POST {{Host}}/orders
+Content-Type: application/json
+
+{
+  "Order":{
+  "CustomerId": "58c49479-ec65-4de2-86e7-033c546291aa",
+  "OrderName": "Sample Order",
+  "ShippingAddress": {
+    "FirstName":"Sachin",
+    "LastName": "Kumar",
+    "EmailAddress":"sachinkumar123@gmail.com",
+    "AddressLine": "123 Shipping St",
+    "City": "Shiptown",
+    "State": "Shipstate",
+    "ZipCode": "12345",
+    "Country": "Shipland"
+  },
+  "BillingAddress": {
+    "FirstName":"Sachin",
+    "LastName": "Kumar",
+    "EmailAddress":"sachinkumar123@gmail.com",
+    "AddressLine": "123 Shipping St",
+    "City": "Shiptown",
+    "State": "Shipstate",
+    "ZipCode": "12345",
+    "Country": "Shipland"
+  },
+  "Payment": {
+    "PaymentMethod": 2,
+    "CardNumber": "4111111111111111",
+    "Expiration": "12/25",
+    "CardName": "Master",
+    "Cvv":"100"
+  },
+  "Status": 3,
+  "OrderItems": [
+    {
+      "OrderId":"d741f8c9-6b54-4d9c-946e-7fd7620e4c43",
+      "ProductId": "6ec1297b-ec0a-4aa1-be25-6726e3b51a27",
+      "Quantity": 2,
+      "Price": 23.99
+    },
+    {
+      "OrderId":"d741f8c9-6b54-4d9c-946e-7fd7620e4c43",
+      "ProductId": "c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914",
+      "Quantity": 1,
+      "Price": 30.99
+    }
+  ]
+}
+
+}

@@ -1,6 +1,6 @@
 
 using Discount.Grpc.Protos;
-using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal;
+using BuildingBlocks.Messaging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 //Application Services
@@ -37,8 +37,9 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     };
 
     return handler;
-}); ;
-var app = builder.Build();
+});
+//Async Communication Services
+builder.Services.AddMessageBroker(builder.Configuration); var app = builder.Build();
 app.MapCarter();
 app.UseExceptionHandler(options => { });
 app.UseHealthChecks("/health",

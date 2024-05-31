@@ -11,3 +11,7 @@ global using Microsoft.EntityFrameworkCore;
 global using FluentValidation;
 global using Ordering.Application.Extensions;
 global using BuildingBlocks.Pagination;
+global using BuildingBlocks.Messaging.MassTransit;
+global using BuildingBlocks.Behaviors;
+global using BuildingBlocks.Messaging.Events;
+global using MassTransit;

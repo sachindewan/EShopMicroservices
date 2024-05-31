@@ -3,12 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ordering.Infrastructure.Data.Interceptors;
 using Ordering.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Ordering.Application.Data;
 
 namespace Ordering.Infrastructure
 {
@@ -29,7 +25,7 @@ namespace Ordering.Infrastructure
                 options.UseSqlServer(connectionString);
             });
 
-            //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
             return services;
         }

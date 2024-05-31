@@ -48,7 +48,7 @@ GET {{host}}/health
 
 ###
 
-@host1 = https://localhost:6061
+@host1 = https://localhost:5051
 POST {{host1}}/basket
 Content-Type: application/json
 
@@ -75,3 +75,27 @@ Content-Type: application/json
 
 ###
 GET {{host1}}/basket/sachinkumar@gmail.com
+
+###
+
+POST {{host1}}/basket/checkout
+Content-Type:application/json
+
+{"basketcheckoutDto":{
+    "UserName": "sachinkumar@gmail.com",
+    "CustomerId": "189dc8dc-990f-48e0-a37b-e6f2b60b9d70",
+    "TotalPrice": 2100,
+    "FirstName": "John",
+    "LastName": "Doe",
+    "EmailAddress": "sachinkumar@gmail.com",
+    "AddressLine": "test",
+    "Country": "test",
+    "State": "test",
+    "ZipCode": "0000",
+    "CardName": "test",
+    "CardNumber": "test",
+    "Expiration": "12/25",
+    "CVV": "123",
+    "PaymentMethod": 1
+}
+}
