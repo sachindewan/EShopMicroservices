@@ -1,6 +1,6 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
 
-@host = https://localhost:5050
+@host = https://localhost:6064/catalog-service
 POST {{host}}/products
 Content-Type: application/json
 

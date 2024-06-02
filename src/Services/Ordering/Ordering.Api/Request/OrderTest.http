@@ -1,6 +1,6 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
-@Host = https://localhost:5053
-POST {{Host}}/orders
+@Host = https://localhost:6064/
+POST {{Host}}/ordering-service/orders
 Content-Type: application/json
 
 {
