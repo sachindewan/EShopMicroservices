@@ -1,6 +1,7 @@
 
 using Discount.Grpc.Protos;
 using BuildingBlocks.Messaging.MassTransit;
+using BuildingBlocks.Correlation;
 
 var builder = WebApplication.CreateBuilder(args);
 //Application Services
@@ -38,10 +39,16 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 
     return handler;
 });
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddScoped<ICorrelationIdGenerator , CorrelationIdGenerator>();
+builder.Services.AddScoped<CorrelationIdMiddleware>();
 //Async Communication Services
-builder.Services.AddMessageBroker(builder.Configuration); var app = builder.Build();
-app.MapCarter();
+builder.Services.AddMessageBroker(builder.Configuration);
+var app = builder.Build();
 app.UseExceptionHandler(options => { });
+app.UseMiddleware<CorrelationIdMiddleware>();
+app.MapCarter();
+
 app.UseHealthChecks("/health",
     new HealthCheckOptions
     {
